@@ -88,7 +88,7 @@ int main(int charc, char *argv[])
 		for (int j = 0; j < def.atomCoords.size(); j++)
 			if (dist(orig.atomCoords[i], def.atomCoords[j]) < MAX_DISP)
 				pairs.push_back(*new origDispPair(orig.atomCoords[i], def.atomCoords[j]));
-	if (!safe)
+	if (safe)
 	{
 		//Make sure there are the right number of elements are in pairs - should be the same as the number of atoms in the original files
 		if (orig.atomCoords.size() != pairs.size() || def.atomCoords.size() != pairs.size())
